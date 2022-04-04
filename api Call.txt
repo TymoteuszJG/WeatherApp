@@ -1,0 +1,1 @@
+https://api.openweathermap.org/data/2.5/weather?q=Bielsko&appid=e519f199a407af9c9ff53b11d608b9b2

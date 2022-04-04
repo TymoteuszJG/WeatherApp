@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/main_Screen_Fragment">
+
+    <fragment
+        android:id="@+id/weatherDetails"
+        android:name="com.example.weatherapp.View.WeatherDetails"
+        android:label="fragment_weather_details"
+        tools:layout="@layout/fragment_weather_details" >
+        <action android:id="@+id/action_weatherDetails_to_chooseCity"
+            app:destination="@+id/chooseCity"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCity"
+        android:name="com.example.weatherapp.View.ChooseCity"
+        android:label="fragment_choose_city"
+        tools:layout="@layout/fragment_choose_city">
+
+        <action android:id="@+id/action_chooseCity_to_WeatherData"
+            app:destination="@+id/weatherDetails"/>
+        <action android:id="@+id/action_chooseCity_to_mainScreen"
+            app:destination="@+id/main_Screen_Fragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/main_Screen_Fragment"
+        android:name="com.example.weatherapp.View.Main_Screen_Fragment"
+        android:label="fragment_main__screen_"
+        tools:layout="@layout/fragment_main__screen_" >
+        <action android:id="@+id/action_mainscreen_to_ChooseCity"
+            app:destination="@id/chooseCity"> </action>
+        <action android:id="@+id/action_mainscreen_to_ChooseCity_Normal"
+            app:destination="@id/chooseCity_Normal"> </action>
+
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCity_Normal"
+        android:name="com.example.weatherapp.View.ChooseCity_Normal"
+        android:label="ChooseCity_Normal" >
+        <action android:id="@+id/action_chooseCity_Normal_to_WeatherData"
+            app:destination="@+id/weatherDetails_Normal"/>
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/weatherDetails_Normal"
+        android:name="com.example.weatherapp.View.WeatherDetails_Normal"
+        android:label="WeatherDetails_Normal" >
+
+
+    </fragment>
+</navigation>

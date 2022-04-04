@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.WeatherDetails" >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_CityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        android:layout_margin="10dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <TextView
+            android:id="@+id/City_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Wait"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_Temp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toBottomOf="@id/Card_CityName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Card_Preasure"
+        app:layout_constraintBottom_toTopOf="@id/Card_SunRise">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/celsius"
+                android:maxHeight="50dp"
+                android:adjustViewBounds="true"
+                android:maxWidth="60dp"
+                android:layout_gravity="center"
+
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:id="@+id/Temperature_Value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please Wait"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_Preasure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toBottomOf="@id/Card_CityName"
+        app:layout_constraintStart_toEndOf="@+id/Card_Temp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Card_SunDawn">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/gauge"
+                android:maxHeight="50dp"
+                android:adjustViewBounds="true"
+                android:maxWidth="60dp"
+                android:layout_gravity="center"
+
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:id="@+id/Pressure_Value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="Please Wait"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_SunRise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toBottomOf="@id/Card_Temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/Card_SunDawn"
+        app:layout_constraintBottom_toTopOf="@id/Card_Weather"
+        >  <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/sunrise"
+            android:maxHeight="50dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="60dp"
+            android:layout_gravity="center"
+
+            android:scaleType="fitCenter"
+            />
+        <TextView
+            android:id="@+id/Sunrise_Value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Wait"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_SunDawn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toBottomOf="@id/Card_Preasure"
+        app:layout_constraintStart_toEndOf="@id/Card_SunRise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Card_Weather"
+        >  <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/sunset"
+            android:maxHeight="50dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="60dp"
+            android:layout_gravity="center"
+
+            android:scaleType="fitCenter"
+            />
+        <TextView
+            android:id="@+id/Sunset_Value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Wait"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+    </LinearLayout></androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_Weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Card_Day2"
+        >
+        <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/cloudy"
+            android:maxHeight="50dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="60dp"
+            android:layout_gravity="center"
+
+            android:scaleType="fitCenter"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Wait"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:id="@+id/Weather_Description"/>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_Day3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        android:layout_margin="10dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/Card_Day2"
+        app:layout_constraintTop_toBottomOf="@id/Card_Weather"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/Name_Day3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Day 3"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        <TextView
+            android:id="@+id/Temp_Day3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Wait"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_Day2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        android:layout_margin="10dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/Card_Day1"
+
+        app:layout_constraintEnd_toStartOf="@id/Card_Day3"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/Name_Day2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Day 2"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+            <TextView
+                android:id="@+id/Temp_Day2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please Wait"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_Day1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#5DB075"
+        app:cardCornerRadius="35dp"
+        android:layout_margin="10dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Card_Weather"
+        app:layout_constraintEnd_toStartOf="@id/Card_Day2"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/Name_Day1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Day 1"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        <TextView
+            android:id="@+id/Temp_Day1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Wait"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
